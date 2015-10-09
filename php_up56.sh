@@ -1,16 +1,15 @@
 #!/bin/bash
-# PHP 5.5 update scripts
-# Author: Arefly
-# Url: http://www.arefly.com/
+# PHP 5.6 update scripts
 
 if [ ! $1 ];then
-	Ver=5.5.30
+	Ver=5.6.14
 else
 	Ver=$1
 fi
 
 Debugfile=20151009
 
+echo "THANK YOU FOR USING UPDATE SCRIPT www.hjdown.com"
 echo "YOU ARE GOING TO UPDATE YOUR PHP TO ${Ver}"
 echo "YOU CAN JUST HAVE A REST"
 echo "IT MAY TAKE A LOT OF TIME"

@@ -1,16 +1,15 @@
 #!/bin/bash
-# PHP 5.5 update scripts
-# Author: Arefly
-# Url: http://www.arefly.com/
+# PHP 5.6 update scripts
 
 if [ ! $1 ];then
-	Ver=5.5.30
+	Ver=5.6.9
 else
 	Ver=$1
 fi
 
-Debugfile=20151009
+Debugfile=20121212
 
+echo "THANK YOU FOR USING UPDATE SCRIPT www.hjdown.com"
 echo "YOU ARE GOING TO UPDATE YOUR PHP TO ${Ver}"
 echo "YOU CAN JUST HAVE A REST"
 echo "IT MAY TAKE A LOT OF TIME"
@@ -31,10 +30,10 @@ yum install -y libmcrypt-devel libjpeg-devel libpng-devel freetype-devel curl-de
 
 ###
 if [ ! -f php-${Ver}.tar.gz ];then
-	wget -c http://cn2.php.net/distributions/php-${Ver}.tar.gz
+	wget -c http://us1.php.net/distributions/php-${Ver}.tar.gz
 fi
 if [ ! -f iconv_ins.sh ];then
-	wget -c http://git.oschina.net/chinayin/wdcp/raw/master/soft/iconv_ins.sh
+	wget -c http://down.wdlinux.cn/in/iconv_ins.sh
 	sh iconv_ins.sh
 fi
 
@@ -54,7 +53,7 @@ if [ -d /www/wdlinux/apache_php ];then
 echo "START CONFIGURING PHP ON NGINX"
 sleep 3
 make clean
-	./configure --prefix=/www/wdlinux/apache_php-${Ver} --with-config-file-path=/www/wdlinux/apache_php-${Ver}/etc --with-mysql=/www/wdlinux/mysql --with-iconv=/usr --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --disable-rpath --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --with-mcrypt=/usr --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-ftp --enable-sockets --enable-zip --with-apxs2=/www/wdlinux/apache/bin/apxs --with-mysqli=/www/wdlinux/mysql/bin/mysql_config --with-pdo-mysql=/www/wdlinux/mysql --enable-opcache --enable-bcmath
+	./configure --prefix=/www/wdlinux/apache_php-${Ver} --with-config-file-path=/www/wdlinux/apache_php-${Ver}/etc --with-iconv=/usr --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --disable-rpath --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --with-mcrypt=/usr --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-ftp --enable-sockets --enable-zip --with-apxs2=/www/wdlinux/apache/bin/apxs --with-mysqli=/www/wdlinux/mysql/bin/mysql_config --with-pdo-mysql=/www/wdlinux/mysql --enable-opcache --enable-bcmath --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd
 [ $? != 0 ] && echo "NO! CONFIGURE ERROR! TRY AGAIN ! :(" && exit
 echo "START MAKE"
 sleep 3
@@ -79,7 +78,7 @@ if [ -d /www/wdlinux/nginx_php ];then
 echo "START CONFIGURING PHP ON APACHE"
 sleep 3
 make clean
-	./configure --prefix=/www/wdlinux/nginx_php-${Ver} --with-config-file-path=/www/wdlinux/nginx_php-${Ver}/etc --with-mysql=/www/wdlinux/mysql --with-iconv=/usr --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --disable-rpath --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --with-mcrypt=/usr --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-ftp --enable-sockets --enable-zip --enable-fpm --with-mysqli=/www/wdlinux/mysql/bin/mysql_config --with-pdo-mysql=/www/wdlinux/mysql
+	./configure --prefix=/www/wdlinux/nginx_php-${Ver} --with-config-file-path=/www/wdlinux/nginx_php-${Ver}/etc --with-iconv=/usr --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --disable-rpath --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --with-mcrypt=/usr --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-ftp --enable-sockets --enable-zip --enable-fpm --with-mysqli=/www/wdlinux/mysql/bin/mysql_config --with-pdo-mysql=/www/wdlinux/mysql --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd
 [ $? != 0 ] && echo "NO! CONFIGURE ERROR! TRY AGAIN ! :(" && exit
 echo "START MAKE"
 sleep 3
@@ -110,12 +109,12 @@ rm -rf php-${Ver}/
 rm -rf php-${Ver}.tar.gz
 rm -rf iconv_ins.sh
 echo
-echo "-------------------------------------------------------------"
+echo "---------------------www.hjdown.com-------------------------------------"
 echo "PHP UPDATE FINISH! :D"
 echo "NOW YOUR PHP VERSION IS ${Ver}!"
+echo "UPDATE SCRIPT www.hjdown.com "
 echo "THANK YOU FOR USING"
 echo
-echo "WDCP (C) COPYRIGHT"
-echo
 echo "PS: I THINK YOU NEED RESTART SERVER AFTER UPDATE."
+echo "PS2: REMEMBER TO VISIT www.hjdown.com"
 echo

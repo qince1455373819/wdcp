@@ -20,6 +20,11 @@ yum update glibc
 wget http://git.oschina.net/chinayin/wdcp/raw/master/php_up55.sh
 sh php_up55.sh
 ```
+升级PHP5.6
+```
+wget http://git.oschina.net/chinayin/wdcp/raw/master/php_up56.sh
+sh php_up56.sh
+```
 
 备注
 ```
