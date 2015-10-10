@@ -7,7 +7,7 @@ else
 	Ver=$1
 fi
 
-Debugfile=20121212
+Debugfile=20151009
 
 echo "THANK YOU FOR USING UPDATE SCRIPT www.hjdown.com"
 echo "YOU ARE GOING TO UPDATE YOUR PHP TO ${Ver}"
