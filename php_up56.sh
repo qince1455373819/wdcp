@@ -175,6 +175,8 @@ cd ..
 rm -rf php-${Ver}/
 rm -rf php-${Ver}.tar.gz
 rm -rf iconv_ins.sh
+echo "COPY PHP TO /usr/sbin"
+cp /www/wdlinux/apache_php-${Ver}/bin/php /usr/sbin
 echo
 echo "-------------------------------------------------------------"
 echo "PHP UPDATE FINISH! :D"
