@@ -4,14 +4,17 @@
 # Url http://www.wdlinux.cn
 
 echo "Select php version:
-    1 php-5.2.17 (default)
+    1 php-5.2.17
     2 php-5.3.27
-    3 php-5.5.30
+    3 php-5.5.30 (default)
     4 php-5.6.14
 "
 sleep 0.1
-read -p "Please Input 1,2,3: " PHP_VER_ID
-if [[ $PHP_VER_ID == 2 ]]; then
+read -p "Please Input 1,2,3,4: " PHP_VER_ID
+if [[ $PHP_VER_ID == 1 ]]; then
+    PHP_VER="5.2.17"
+    ext_dir="no-debug-zts-20060613"
+elif [[ $PHP_VER_ID == 2 ]]; then
     PHP_VER="5.3.27"
     ext_dir="no-debug-non-zts-20090626"
 elif [[ $PHP_VER_ID == 3 ]]; then
@@ -21,8 +24,8 @@ elif [[ $PHP_VER_ID == 4 ]]; then
     PHP_VER="5.6.14"
     ext_dir="no-debug-non-zts-20151009"
 else
-    PHP_VER="5.2.17"
-    ext_dir="no-debug-zts-20060613"
+    PHP_VER="5.5.30"
+    ext_dir="no-debug-non-zts-20121212"
 fi
 TOP=$(cd $(dirname $0)/.. && pwd)
 ###
