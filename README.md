@@ -25,6 +25,11 @@ sh php_up55.sh
 wget http://git.oschina.net/chinayin/wdcp/raw/master/php_up56.sh
 sh php_up56.sh
 ```
+安装memcached-1.4.24
+```
+wget http://git.oschina.net/chinayin/wdcp/raw/master/memcached_install.sh
+sh memcached_install.sh
+```
 
 备注
 ```
