@@ -41,6 +41,16 @@ ssh-keygen -t rsa -C "youremail@163.com"
 vim ~/.ssh/id_rsa.pub
 ssh -T git@github.com
 ```
+设置IP(临时)
+```
+ifconfig eth0 192.168.31.200 netmask 255.255.255.0 broadcast 192.168.31.255
+service network restart
+```
+设置IP(永久)
+```
+wget http://git.oschina.net/chinayin/wdcp/raw/master/tools/setip.sh
+sh setip.sh
+```
 
 备注
 ```
