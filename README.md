@@ -34,6 +34,11 @@ sh php_up56.sh
 wget http://git.oschina.net/chinayin/wdcp/raw/master/memcached_install.sh
 sh memcached_install.sh
 ```
+更新为阿里源
+```
+wget http://git.oschina.net/chinayin/wdcp/raw/master/tools/update_source.sh
+sh update_source.sh
+```
 安装git
 ```
 yum install -y git
